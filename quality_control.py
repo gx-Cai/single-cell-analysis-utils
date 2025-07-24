@@ -7,10 +7,12 @@ import anndata2ri
 import logging
 import rpy2.rinterface_lib.callbacks as rcb
 import rpy2.robjects as ro
+from . import config
 
 __all__ = ['filtering_reads','filtering_drop']
 
-RHOME = "/share/anaconda3/envs/scRNApipe/lib/R"
+RHOME = config.R_home_path
+
 RLIB = os.path.join(RHOME,'library')
 file_path = os.path.dirname(os.path.abspath(__file__))
 
